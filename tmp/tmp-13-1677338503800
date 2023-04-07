@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div style="height: 300px; width: 400px;"><img src="https://www.ssdntech.com/blog/wp-content/uploads/2020/07/An-Introduction-to-Cockpit-1.png" style="width: 100%; height: 100%;" alt="aa"></div>
+    
+    
+    <iframe src="https://res.cloudinary.com/dhknvtaq2/image/upload/v1677056838/vvtzzvf0hmz44c8ed2jy.pdf" 
+    frameborder="0" style="overflow:hidden;overflow-x:hidden;overflow-y:hidden;height:400;width: 800px;;position:absolute;top:20%;left:0px;right:0px;bottom:0px" height="100%" width="100%"></iframe>
+
+    <div class="conteiner">
+        <ul class="box-trai">
+            <li><a href=""><i class="fa-solid fa-bars"></i></a></li>
+            <li> <a href="">Trang chủ</a> </li>
+            <li> <a href=""> Cập nhật mới nhất</a></li>
+            <li> <a href="">Thể loại </a>
+                <ul class="drop-down">
+                    <li><a href="">Dã sử</a></li>
+                    <li><a href="">Xuyên không</a></li>
+                    <li><a href="">Khoa huyễn</a></li>
+                    <li><a href="">Đồng nhân</a></li>
+                    <li><a href="">Khoa huyễn</a></li>
+                </ul>
+        </ul>
+        <ul class="box-giua">
+            <div class="khung-tim-kiem">
+                <input type="text" id="search" oninput="search()" name="search" placeholder=" &nbsp;Tìm kiếm theo tên truyện hoặc tác giả" id="input">
+                <a href=""></a><i  id="search-icon"  class="fa-solid fa-magnifying-glass"></i>
+            </div>
+        </ul>
+       <div class="boxId">
+         <ul >
+            <li>   </li>
+            <li ><p id="user" onclick="showUserBox()"></p>
+                <ul id="user-box">
+                    <li><p onclick="OpenModal3()">Đổi mật khẩu</p></li>
+                    <li><p onclick="logOut()">Đăng xuất</p></li>
+                </ul>
+            </li>
+            <div id="modal3">
+                <div class="body-modal">
+                    <div class="button-X">
+                        <p onclick="hidenModal3()" class="nut-X3"> <i class="fa-solid fa-xmark"></i></p>
+                    </div>
+                    <div class="o-doi-pass">                       
+                        <label for="old-password">Mật khẩu cũ </label> <br>
+                        <input id="old-password" type="password" placeholder="Password">
+                        <i id="icon-old-pass" onclick="showOldPassword()" class="fa-eye fa-solid"></i> <br>
+                        <span class="error-old-pass" id="error-old-pass" style="display: none">Mật khẩu cũkhông khớp</span>
+                        <label for="new-password">Mật khẩu mới </label> <br>
+                        <input id="new-password" type="password" placeholder="Password">   
+                        <i id="iconNewPass" onclick="showNewPassword()" class="fa-eye fa-solid"></i> <br>
+                            <span class="erro" id="erro" style= "display: none;"> Mật khẩu không đúng định dạng</span>
+                            <span class="trung-mat-khau" id="trung-mat-khau" style="display: none">Mật khẩu mới không được trùng mật khẩu cũ</span>
+                            <label for="confirm-password">Xác nhận mật khẩu mới </label> <br>
+                        <input id="confirm-password" type="password" placeholder="Password">
+                        <i id="iconNewConfirm" onclick="showConfirmNewPassword()" class="fa-eye fa-solid"></i> <br>
+                            <p id="confirmError" style="display: none">Password nhập không khớp</p>
+                        <button id="button" onclick="changePass()"> Xác nhận </button>
+            </div>
+
+        </ul>
+       </div>
+        <div id="box-phai"class="box-phai">
+                     
+            <p class="open-register" onclick="toogleModal1()">Đăng kí</p>
+            <div id="modal1"class="modal1">
+                <div onblur="hidenModal1()" class="modal-register">
+                    <div class="body-modal">
+                        <div class="button-X">
+                            <p  onclick="hidenModal1()" class="nut-X1"> <i class="fa-solid fa-xmark"></i></p>
+                        </div>
+                        <div id="modalTMRs-modal-body"class="o-dang-ky">
+                            <label for="">Tên đăng ký</label><br>
+                            <input id='username' type="text" placeholder="Username">
+                            <span class="errorUserName" id="errorUserName" style="display: none">Username sai dinh
+                                dang</span><br>
+                            <label for=""> Email </label> <br>
+                            <input id="email" type="text" placeholder="Email"> <br>
+                            <span class="errorMail" id="errorMail" style="display: none">Email sai dinh dang</span>
+                            <label for="password"> Mật khẩu </label> <br>
+                            <i id="icon" onclick="showPassword()" class="fa-solid fa-eye"></i>
+                            <input id="password" type="password" placeholder="Password"> <br>
+                            <span class="error" id="error" style="display: none">Password sai định dạng</span>
+                            <label for="confirmPassword"> Nhập lại mật khẩu </label> <br>
+                            <i id="iconClose" onclick="showConfirmPassword()" class="fa-solid fa-eye"></i>
+                            <input id="confirmPassword" type="password" placeholder="Confirm Password"> <br>
+                            <p id="confirmError" style="display: none">Password nhập không khớp</p>
+
+                            <button id="button" onclick="handleRegister()"> Đăng ký </button>
+                            <div class="okAcount">
+                                <span id="thong-bao" style="display: none;"> Usernam hoặc Email đã được đăng ký </span>
+                                Bạn đã có tài khoản. <br>
+                                <p onclick="toogleModal2()" style="color: blue;"class="open-login">Đăng nhập</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <p onclick="toogleModal2()" id="open-login" class="open-login">Đăng nhập</p>
+            <div id="modalTMRs" class="modal2">
+                <div class="modal-login">
+                    <div class="body-modal">
+                        <div class="button-X">
+                            <p onclick="hidenModal2()" class="nut-X2"> <i class="fa-solid fa-xmark"></i></p>
+                        </div>
+                        <div id="modalTMRs-modal-body" class="o-dang-nhap">
+                            <label for="">Tên đăng nhập</label><br>
+                            <input id='username2' type="text" placeholder="Username">
+                            <span class="errorUserName" id="errorUserName" style="display: none">Username sai dinh
+                                dang</span><br>
+                            <label for="password">Mật khẩu </label> <br>
+                            <input id="password2" type="password" placeholder="Password">
+                            <i id="icon2" onclick="showPassword2()" class="fa-eye fa-solid"></i> <br>
+                            <span class="error" id="error" style="display: none;color:red">Mật khẩu hoặc tên đăng nhập chưa đúng</span>
+                            <button id="button" onclick="login()"> Đăng nhập </button>
+                            <div class="noAcount">
+                                Bạn chưa có tài khoản. <p style="color:blue" onclick="toogleModal1()">Đăng ký</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <div class="center">
+        <div class="banner-1">
+
+        </div>
+        <div class="than-chinh">
+            <div class="abandon2">
+
+            </div>
+            <div class="khung">
+                <div class="khung-trai">
+                    <div class="titte">
+                        <h3 style="font-size: 23px;">Danh sách truyện</h3>
+                    </div>
+                    <div id="wrapper">
+                        <div id="item">
+                            <!-- <a href=""><img src="./image/1.jpg" style="height: 120px;" alt=""></a>
+                                <div id="item-body">
+                                    <a href=""><h4>Nhất thống thiên hạ</h4></a>
+                                    <a href=""><p>Sheepboy</p></a>
+                                    <span>Truyện kể về một giang hồ xuyên không về thời Lý</span><br>   
+                                    <div id="body-duoi">
+                                        <button> Dã sử</button>
+                                        <p href="">Free</p>
+                                    </div>
+                                </div> -->
+
+                        </div>
+                        <div id="item"></div>
+                        <div id="item"></div>
+                        <div id="item"></div>
+                    </div>
+                </div>
+                <div class="khung-phai">
+                    <div id="follow">
+                        <h4>Đang theo dõi</h4>
+                    </div>
+                    <div id="huong-dan">
+                        <h3> Hướng dẫn</h3><br>
+
+                        <ul>
+                            <li><a href="">Cách nạp kẹo</a></li>
+                            <li><a href="">Tại sao tôi bị khóa acc?</a></li>
+                            <li><a href="">Level là gì vậy?</a></li>
+                            <li><a href="">Level có tác dụng gì?</a></li>
+                            <li><a href="">Làm sao để lên level?</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="abandon3">
+
+            </div>
+        </div>
+
+    </div>
+
+    </div>
+
+    <div class="bottom">
+        <div class="conteiner2">
+            <div class="About">
+                <h3>Giới thiệu</h3>
+                <span> Đây là trang web được tạo ra với giao diện thân thiện giúp cải thiện văn hóa đọc của mọi người
+                </span>
+            </div>
+            <div class="Contact">
+                <h3>Mọi ý kiến đóng góp xin vui lòng liên hệ với chúng tôi qua</h3><br>
+                <p id="icon"><i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-patreon"></i>
+                    <i class="fa-brands fa-discord"></i>
+                    <i class="fa-brands fa-reddit-alien"></i>
+                </p>
+            </div>
+        </div>
+        <div class="copy-right">
+            <h4>Copyright © 2015-2017 . All rights reserved.</h4>
+        </div>
+    </div>
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.2.0/zxcvbn.js"></script>
+    
+
+    
+
+</body>
+<script src="./trangchu.js"></script>
+</html>
